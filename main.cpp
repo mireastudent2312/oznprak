@@ -3,7 +3,7 @@
 #include "nn/Layer.hpp"
 #include "nn/NeuralNetwork.hpp"
 #include "ui/Window.hpp"
-#include <qt6/QtWidgets/QApplication>
+#include <QApplication>
 
 int main(int argc, char *argv[]) {
     QApplication app(argc, argv);

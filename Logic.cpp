@@ -1,5 +1,11 @@
 #include <fstream>
+
+#if defined(WIN32) || defined(_WIN32) || defined(__WIN32) && !defined(__CYGWIN__)
+#include <winsock2.h>
+#else
 #include <netinet/in.h>
+#endif
+
 #include <QImage>
 #include <thread>
 #include <QLabel>
