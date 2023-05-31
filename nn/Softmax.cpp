@@ -5,10 +5,6 @@ Matrix Softmax::activation(const Matrix &matrix) {
 
     auto result = (matrix-matrix.max()).apply(exp);
 
-    for (int i=0; i<matrix.rows(); i++) {
-        result.at(i, 1) = exp(matrix.at(i, 1));
-    }
-
     return result/result.sum();
 }
 
