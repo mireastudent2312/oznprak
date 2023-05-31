@@ -15,10 +15,10 @@ Logic::Logic() {
     neuralNetwork.addLayer(std::move(first));
     neuralNetwork.addLayer(std::make_unique<Layer>(10, std::make_unique<Softmax>()));
 
-    trainImages = readImages("../mnist/train-images.idx3-ubyte");
-    testImages = readImages("../mnist/t10k-images.idx3-ubyte");
-    trainLabels = readLabels("../mnist/train-labels.idx1-ubyte");
-    testLabels = readLabels("../mnist/t10k-labels.idx1-ubyte");
+    trainImages = readImages("mnist/train-images.idx3-ubyte");
+    testImages = readImages("mnist/t10k-images.idx3-ubyte");
+    trainLabels = readLabels("mnist/train-labels.idx1-ubyte");
+    testLabels = readLabels("mnist/t10k-labels.idx1-ubyte");
 }
 
 void Logic::trainNetwork(int epochs, double learningRate, Window *window, int numThreads) {
