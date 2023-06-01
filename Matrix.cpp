@@ -163,7 +163,7 @@ Matrix Matrix::hadamard(const Matrix &other) const {
 Matrix Matrix::operator*(const Matrix &other) const {
     assert(cols_ == other.rows_);
     Matrix result(rows_, other.cols_);
-#pragma omp parallel for collapse(3) default(none) shared(other, result)
+#pragma omp parallel for default(none) shared(other, result)
     for (int i = 0; i < rows_; i++) {
         for (int j = 0; j < other.cols_; j++) {
             for (int k = 0; k < cols_; k++) {
