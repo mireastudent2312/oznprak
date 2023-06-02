@@ -185,9 +185,14 @@ std::ostream &operator<<(std::ostream &stream, const Matrix &matrix) {
 }
 
 Matrix Matrix::T() const {
-    Matrix output = *this;
-    std::swap(output.cols_, output.rows_);
-    return output;
+    Matrix result = *this;
+    std::swap(result.cols_, result.rows_);
+    for (int i = 0; i < rows_; i++) {
+        for (int j = 0; j < cols_; j ++) {
+            result.data_[j * rows_ + i] = data_[i * cols_ + j];
+        }
+    }
+    return result;
 }
 
 double Matrix::sum() {
